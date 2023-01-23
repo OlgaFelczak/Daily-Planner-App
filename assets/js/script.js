@@ -9,18 +9,33 @@ const containerJqEl = $(".container");
 const timeblockJqEl = $("<div>").attr("class", "time-block");
 containerJqEl.append(timeblockJqEl);
 
-function renderTimeblock() {
+function renderRow(hour) {
   const rowJqEl = $("<div>").attr("class", "row");
-  const hourJqEl = $("<div>").attr("class", "hour");
-  const textareaJqEl = $("<textarea>").attr("class", "past");
-  const buttonJqEl = $("<button>").attr("class", "saveBtn");
 
+  const textareaJqEl = $("<textarea>");
+  const currentHour = Number(moment(new Date()).format("H"));
+  if (hour < currentHour) {
+    textareaJqEl.attr("class", "past");
+  } else if (hour > currentHour) {
+    textareaJqEl.attr("class", "future");
+  } else {
+    textareaJqEl.attr("class", "present");
+  }
+
+  const hourJqEl = $("<div>").attr("class", "hour").text(hour);
+  const buttonJqEl = $("<button>").attr("class", "saveBtn");
+  const buttonIconJqEl = $("<i>").attr("class", "fa-solid fa-floppy-disk");
+
+
+  buttonJqEl.append(buttonIconJqEl);
   rowJqEl.append(hourJqEl);
   rowJqEl.append(textareaJqEl);
   rowJqEl.append(buttonJqEl);
   timeblockJqEl.append(rowJqEl);
 }
-renderTimeblock();
+renderRow(9);
+renderRow(18);
+renderRow(20);
 
 {
   /* <div class="time-block">
