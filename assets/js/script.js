@@ -22,6 +22,7 @@ function renderRow(hour) {
   // Textarea to allow a user to enter an event when they click a timeblock
   const textareaJqEl = $("<textarea>");
   const currentHour = Number(moment(new Date()).format("H"));
+  
   // Color-code each timeblock based on past, present, and future when the timeblock is viewed
   if (hour < currentHour) {
     textareaJqEl.attr("class", "past");
