@@ -6,8 +6,8 @@ This is a simple calendar application that allows a user to enter and save event
 
 ## Screenshot
 
-![Top page view](/assets/Screenshot/Screenshot1.png)
-![Bottom page view](/assets/Screenshot/Screenshot2.png)
+![Top page view](/assets/screenshot/Screenshot1.png)
+![Bottom page view](/assets/screenshot/Screenshot2.png)
 
 ## User Story
 
